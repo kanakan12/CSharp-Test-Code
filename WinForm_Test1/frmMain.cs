@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WinForm_Test1
 {
     public partial class frmMain : Form
     {
         string path = AppDomain.CurrentDomain.BaseDirectory;
+        DriveInfo[] drives = DriveInfo.GetDrives();
+
         public frmMain()
         {
             InitializeComponent();
@@ -23,6 +26,20 @@ namespace WinForm_Test1
 
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             pictureBox1.Image = new Bitmap(path + "Test_Image.PNG");
+
+            timUpdate.Start();
+
+            for (int n = 0; n < drives.Length; n++)
+            {
+                lstDrives.Items.Add(drives[n].Name + " - " + drives[n].DriveType);
+            }
+
+            for (int n = 0; n < drives.Length; n++)
+            {
+                cmbDrives.Items.Add(drives[n].Name + " - " + drives[n].DriveType);
+            }
+
+            laTime.Text = DateTime.Now.Hour + " : " + DateTime.Now.Minute + " :" + DateTime.Now.Second;
         }
 
         private void frmMain_Click(object sender, EventArgs e)
@@ -71,6 +88,48 @@ namespace WinForm_Test1
                 laResult_1.Text = "체크 박스가 선택되었습니다.";
             else
                 laResult_1.Text = "체크 박스가 선택되지 않았습니다.";
+        }
+
+        private void raItem1_CheckedChanged(object sender, EventArgs e)
+        {
+            laResult_2.Text = "1번 라디오 버튼이 선택되었습니다.";
+        }
+
+        private void raItem2_CheckedChanged(object sender, EventArgs e)
+        {
+            laResult_2.Text = "2번 라디오 버튼이 선택되었습니다.";
+        }
+
+        private void raItem3_CheckedChanged(object sender, EventArgs e)
+        {
+            laResult_2.Text = "3번 라디오 버튼이 선택되었습니다.";
+        }
+
+        private void lstDrives_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selCount = lstDrives.SelectedItems.Count;
+
+            if (selCount <= 1 && selCount > 0)
+                laResult_3.Text = "선택된 항목은 " + lstDrives.SelectedItem.ToString() + "입니다.";
+            else if (selCount >= 2)
+                laResult_3.Text = "선택된 항목은 총" + selCount.ToString() + "개 입니다.";
+            else if(selCount == 0)
+                laResult_3.Text = "선택된 항목이없습니다.";
+        }
+
+        private void cmbDrives_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            laResult_3.Text = "선택된 항목은 " + cmbDrives.SelectedItem.ToString() + "입니다.";
+        }
+
+        private void 종료ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void timUpdate_Tick(object sender, EventArgs e)
+        {
+            laTime.Text = DateTime.Now.Hour + " : " + DateTime.Now.Minute + " : " + DateTime.Now.Second;
         }
     }
 }
