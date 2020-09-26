@@ -1,0 +1,12 @@
+C:\Users\JHPark\source\repos\TCPClientConsole\TCPClientConsole\bin\Debug\netcoreapp3.1\TCPClientConsole.exe
+C:\Users\JHPark\source\repos\TCPClientConsole\TCPClientConsole\bin\Debug\netcoreapp3.1\TCPClientConsole.deps.json
+C:\Users\JHPark\source\repos\TCPClientConsole\TCPClientConsole\bin\Debug\netcoreapp3.1\TCPClientConsole.runtimeconfig.json
+C:\Users\JHPark\source\repos\TCPClientConsole\TCPClientConsole\bin\Debug\netcoreapp3.1\TCPClientConsole.runtimeconfig.dev.json
+C:\Users\JHPark\source\repos\TCPClientConsole\TCPClientConsole\bin\Debug\netcoreapp3.1\TCPClientConsole.dll
+C:\Users\JHPark\source\repos\TCPClientConsole\TCPClientConsole\bin\Debug\netcoreapp3.1\TCPClientConsole.pdb
+C:\Users\JHPark\source\repos\TCPClientConsole\TCPClientConsole\obj\Debug\netcoreapp3.1\TCPClientConsole.AssemblyInfoInputs.cache
+C:\Users\JHPark\source\repos\TCPClientConsole\TCPClientConsole\obj\Debug\netcoreapp3.1\TCPClientConsole.AssemblyInfo.cs
+C:\Users\JHPark\source\repos\TCPClientConsole\TCPClientConsole\obj\Debug\netcoreapp3.1\TCPClientConsole.csproj.CoreCompileInputs.cache
+C:\Users\JHPark\source\repos\TCPClientConsole\TCPClientConsole\obj\Debug\netcoreapp3.1\TCPClientConsole.dll
+C:\Users\JHPark\source\repos\TCPClientConsole\TCPClientConsole\obj\Debug\netcoreapp3.1\TCPClientConsole.pdb
+C:\Users\JHPark\source\repos\TCPClientConsole\TCPClientConsole\obj\Debug\netcoreapp3.1\TCPClientConsole.genruntimeconfig.cache
