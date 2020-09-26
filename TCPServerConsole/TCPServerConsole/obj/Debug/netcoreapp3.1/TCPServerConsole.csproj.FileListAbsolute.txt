@@ -1,0 +1,13 @@
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\bin\Debug\netcoreapp3.1\TCPServerConsole.exe
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\bin\Debug\netcoreapp3.1\TCPServerConsole.deps.json
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\bin\Debug\netcoreapp3.1\TCPServerConsole.runtimeconfig.json
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\bin\Debug\netcoreapp3.1\TCPServerConsole.runtimeconfig.dev.json
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\bin\Debug\netcoreapp3.1\TCPServerConsole.dll
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\bin\Debug\netcoreapp3.1\TCPServerConsole.pdb
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\obj\Debug\netcoreapp3.1\TCPServerConsole.csprojAssemblyReference.cache
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\obj\Debug\netcoreapp3.1\TCPServerConsole.AssemblyInfoInputs.cache
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\obj\Debug\netcoreapp3.1\TCPServerConsole.AssemblyInfo.cs
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\obj\Debug\netcoreapp3.1\TCPServerConsole.csproj.CoreCompileInputs.cache
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\obj\Debug\netcoreapp3.1\TCPServerConsole.dll
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\obj\Debug\netcoreapp3.1\TCPServerConsole.pdb
+C:\Users\JHPark\source\repos\TCPServerConsole\TCPServerConsole\obj\Debug\netcoreapp3.1\TCPServerConsole.genruntimeconfig.cache
