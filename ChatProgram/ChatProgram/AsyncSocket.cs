@@ -11,7 +11,7 @@ namespace ChatProgram
 {
     class AsyncSocket
     {
-        private const int BUFFER_SIZE = 1024;
+        private const int PACKET_HEADER_SIZE = 1024;
 
         public const int DEFAULT_PORT_NUM = 3317;
 
@@ -194,8 +194,6 @@ namespace ChatProgram
             String message = "";
             byte[] data = null;
 
-            data = new byte[BUFFER_SIZE];
-
             while (true)
             {
                 if (mClientSocket == null)
@@ -210,7 +208,7 @@ namespace ChatProgram
                     break;
                 }
 
-                mClientSocket.Receive(data, SocketFlags.None);
+                data = ReceiveData();
 
                 message = Encoding.Default.GetString(data);
 
@@ -240,7 +238,7 @@ namespace ChatProgram
 
             data = Encoding.Default.GetBytes(message);
 
-            mClientSocket.Send(data, 0, data.Length, SocketFlags.None);
+            SendData(data);
         }
 
         /// <summary>
@@ -276,6 +274,74 @@ namespace ChatProgram
         public String GetCorrespondentIPAddress()
         {
             return mCorrespondentIPAddress;
+        }
+
+        /// <summary>
+        /// 소켓의 버퍼에 있는 데이터 수신
+        /// </summary>
+        /// <returns>수신 완료된 데이터</returns>
+        private byte[] ReceiveData()
+        {
+            byte[] headerBuffer = new byte[PACKET_HEADER_SIZE];
+            byte[] dataBuffer = null;
+
+            int totalDataSize = 0;
+            int accumulatedDataSize = 0;
+            int leftDataSize = 0;
+            int receivedDataSize = 0;
+
+            // 데이터 수신
+            // receivedDataSize에는 Receive 함수를 한 번 호출함으로써 수신한 데이터 크기가 저장
+            receivedDataSize = mClientSocket.Receive(headerBuffer, 0, PACKET_HEADER_SIZE, SocketFlags.None);
+
+            // 수신해야 할 총 데이터 크기를 구함
+            totalDataSize = BitConverter.ToInt32(headerBuffer, 0);
+
+            leftDataSize = totalDataSize;
+
+            dataBuffer = new byte[totalDataSize];
+
+            while(leftDataSize > 0)
+            {
+                receivedDataSize = mClientSocket.Receive(dataBuffer, accumulatedDataSize, leftDataSize, 0);
+
+                accumulatedDataSize += receivedDataSize;
+
+                leftDataSize -= receivedDataSize;
+            }
+
+            return dataBuffer;
+        }
+
+        /// <summary>
+        /// byte 배열 형태의 데이터 값을 네트워크를 통해 전송
+        /// </summary>
+        /// <param name="dataBuffer">전송하고자 하는 값이 들어 있는 byte 배열</param>
+        private void SendData(byte[] dataBuffer)
+        {
+            byte[] headerBuffer = new byte[PACKET_HEADER_SIZE];
+
+            int totalDataSize = 0;
+            int accumulatedDataSize = 0;
+            int leftDataSize = 0;
+            int sentDataSize = 0;
+
+            totalDataSize = dataBuffer.Length;
+            leftDataSize = totalDataSize - sentDataSize;
+
+            headerBuffer = BitConverter.GetBytes(totalDataSize);
+            mClientSocket.Send(headerBuffer);
+
+            while (leftDataSize > 0)
+            {
+                // 데이터 전송
+                // sentDataSize에는 Send 함수를 한 번 호출함으로써 전송된 데이터의 크기가 저장
+                sentDataSize = mClientSocket.Send(dataBuffer, accumulatedDataSize, leftDataSize, SocketFlags.None);
+
+                accumulatedDataSize += sentDataSize;
+
+                leftDataSize -= sentDataSize;
+            }
         }
     }
 }

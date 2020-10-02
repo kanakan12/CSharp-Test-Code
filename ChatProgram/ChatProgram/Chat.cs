@@ -76,34 +76,6 @@ namespace ChatProgram
             int portNum = 0;
             portNum = Int32.Parse(mTxtMyPortNum.Text.Trim());
             mAsyncSocket.StartServer(portNum);
-            //Socket server = null;
-            //Socket client = null;
-            //byte[] data = new byte[1024];
-            //String message = "";
-
-            //int portNum = Int32.Parse(mTxtMyPortNum.Text.ToString());
-
-            //IPEndPoint ipep = new IPEndPoint(IPAddress.Any, portNum);
-            //server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-            //server.Bind(ipep);
-            //server.Listen(10);
-
-            //NotifyMessage("서버를 시작합니다.\n클라이언트의 접속을 대기합니다.");
-
-            //client = server.Accept();
-
-            //NotifyMessage("클라이언트가 접속하였습니다");
-
-            //client.Receive(data);
-
-            //message = Encoding.Default.GetString(data);
-            //message = "상대방: " + message;
-
-            //AppendMessage(message);
-
-            //client.Close();
-            //server.Close();
         }
 
         /// <summary>
@@ -121,30 +93,6 @@ namespace ChatProgram
             portNum = Int32.Parse(mTxtServerPortNum.Text.Trim());
 
             mAsyncSocket.Connect(serverIPAddress, portNum);
-            //byte[] data = new byte[1024];
-            //String serverIPAddress = "";
-            //int portNum = 0;
-
-            //serverIPAddress = mTxtServerIP.Text.Trim();
-            //portNum = Int32.Parse(mTxtServerPortNum.Text.Trim());
-
-            //IPAddress ipAddress = IPAddress.Parse(serverIPAddress);
-            //IPEndPoint ipep = new IPEndPoint(ipAddress, portNum);
-
-            //Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
-
-            //NotifyMessage("서버에 접속합니다.");
-
-            //server.Connect(ipep);
-
-            //NotifyMessage("서버에 접속하였습니다");
-
-            //data = Encoding.Default.GetBytes("클라이언트에서 보내는 메시지입니다.");
-            //server.Send(data);
-
-            //NotifyMessage("서버에 데이터를 전송하였습니다.");
-
-            //server.Close();
         }
 
         /// <summary>
@@ -185,21 +133,27 @@ namespace ChatProgram
         /// <param name="e"></param>
         private void mTxtInputMessage_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    String message = "";
+            //    String myIPAddress = "";
+            //    message = mTxtInputMessage.Text;
+            //    myIPAddress = mAsyncSocket.GetMyIPAddress();
+
+            //    SendMessage(message);
+
+            //    message = "나 (" + myIPAddress + ")\r\n" + message;
+
+            //    AppendMessage(message);
+
+            //    mTxtInputMessage.Text = "";
+            //    mTxtInputMessage.Focus();
+            //}
+
+            // key 입력과 같이 사용 가능
+            if (e.KeyCode == Keys.Enter)
             {
-                String message = "";
-                String myIPAddress = "";
-                message = mTxtInputMessage.Text;
-                myIPAddress = mAsyncSocket.GetMyIPAddress();
-
-                SendMessage(message);
-
-                message = "나 (" + myIPAddress + ")\r\n" + message;
-
-                AppendMessage(message);
-
-                mTxtInputMessage.Text = "";
-                mTxtInputMessage.Focus();
+                this.mBtnSendMessage_Click(sender, e);
             }
         }
 
