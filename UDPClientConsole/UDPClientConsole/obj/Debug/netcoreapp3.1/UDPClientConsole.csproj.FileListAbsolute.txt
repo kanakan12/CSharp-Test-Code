@@ -1,0 +1,12 @@
+C:\Users\JHPark\source\repos\UDPClientConsole\UDPClientConsole\bin\Debug\netcoreapp3.1\UDPClientConsole.exe
+C:\Users\JHPark\source\repos\UDPClientConsole\UDPClientConsole\bin\Debug\netcoreapp3.1\UDPClientConsole.deps.json
+C:\Users\JHPark\source\repos\UDPClientConsole\UDPClientConsole\bin\Debug\netcoreapp3.1\UDPClientConsole.runtimeconfig.json
+C:\Users\JHPark\source\repos\UDPClientConsole\UDPClientConsole\bin\Debug\netcoreapp3.1\UDPClientConsole.runtimeconfig.dev.json
+C:\Users\JHPark\source\repos\UDPClientConsole\UDPClientConsole\bin\Debug\netcoreapp3.1\UDPClientConsole.dll
+C:\Users\JHPark\source\repos\UDPClientConsole\UDPClientConsole\bin\Debug\netcoreapp3.1\UDPClientConsole.pdb
+C:\Users\JHPark\source\repos\UDPClientConsole\UDPClientConsole\obj\Debug\netcoreapp3.1\UDPClientConsole.AssemblyInfoInputs.cache
+C:\Users\JHPark\source\repos\UDPClientConsole\UDPClientConsole\obj\Debug\netcoreapp3.1\UDPClientConsole.AssemblyInfo.cs
+C:\Users\JHPark\source\repos\UDPClientConsole\UDPClientConsole\obj\Debug\netcoreapp3.1\UDPClientConsole.csproj.CoreCompileInputs.cache
+C:\Users\JHPark\source\repos\UDPClientConsole\UDPClientConsole\obj\Debug\netcoreapp3.1\UDPClientConsole.dll
+C:\Users\JHPark\source\repos\UDPClientConsole\UDPClientConsole\obj\Debug\netcoreapp3.1\UDPClientConsole.pdb
+C:\Users\JHPark\source\repos\UDPClientConsole\UDPClientConsole\obj\Debug\netcoreapp3.1\UDPClientConsole.genruntimeconfig.cache
