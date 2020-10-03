@@ -1,0 +1,13 @@
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\bin\Debug\netcoreapp3.1\UDPServerConsole.exe
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\bin\Debug\netcoreapp3.1\UDPServerConsole.deps.json
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\bin\Debug\netcoreapp3.1\UDPServerConsole.runtimeconfig.json
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\bin\Debug\netcoreapp3.1\UDPServerConsole.runtimeconfig.dev.json
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\bin\Debug\netcoreapp3.1\UDPServerConsole.dll
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\bin\Debug\netcoreapp3.1\UDPServerConsole.pdb
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\obj\Debug\netcoreapp3.1\UDPServerConsole.csprojAssemblyReference.cache
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\obj\Debug\netcoreapp3.1\UDPServerConsole.AssemblyInfoInputs.cache
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\obj\Debug\netcoreapp3.1\UDPServerConsole.AssemblyInfo.cs
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\obj\Debug\netcoreapp3.1\UDPServerConsole.csproj.CoreCompileInputs.cache
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\obj\Debug\netcoreapp3.1\UDPServerConsole.dll
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\obj\Debug\netcoreapp3.1\UDPServerConsole.pdb
+C:\Users\JHPark\source\repos\UDPServerConsole\UDPServerConsole\obj\Debug\netcoreapp3.1\UDPServerConsole.genruntimeconfig.cache
