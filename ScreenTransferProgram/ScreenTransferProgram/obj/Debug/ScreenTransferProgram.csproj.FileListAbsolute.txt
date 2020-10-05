@@ -1,0 +1,5 @@
+C:\Users\JHPark\source\repos\ScreenTransferProgram\ScreenTransferProgram\obj\Debug\ScreenTransferProgram.csprojAssemblyReference.cache
+C:\Users\JHPark\source\repos\ScreenTransferProgram\ScreenTransferProgram\obj\Debug\ScreenTransferProgram.DisplayScreen.resources
+C:\Users\JHPark\source\repos\ScreenTransferProgram\ScreenTransferProgram\obj\Debug\ScreenTransferProgram.Properties.Resources.resources
+C:\Users\JHPark\source\repos\ScreenTransferProgram\ScreenTransferProgram\obj\Debug\ScreenTransferProgram.csproj.GenerateResource.cache
+C:\Users\JHPark\source\repos\ScreenTransferProgram\ScreenTransferProgram\obj\Debug\ScreenTransferProgram.csproj.CoreCompileInputs.cache
