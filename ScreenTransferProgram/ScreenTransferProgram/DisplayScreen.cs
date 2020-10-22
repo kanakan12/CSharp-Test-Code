@@ -20,7 +20,7 @@ namespace ScreenTransferProgram
         // 텍스트 메시지 갱신 delegate
         delegate void UpdateTextCallback(String message);
         // 이미지 갱신 delegate
-        delegate void UpdateScreenImage(Bitmap image);
+        delegate void UpdateScreenImageCallback(Bitmap image);
 
         // 동기 소켓으로 작동하는 사용자 정의 소켓 클래스
         private AsyncSocket mAsynSocket = null;
@@ -78,10 +78,11 @@ namespace ScreenTransferProgram
             // 클라이언트 기능 초기화
             mAsynSocket.InitClientSocket(serverIPAddress, portNum);
 
+            // 이미지 전송 스레드 시작
+            mTimerSendScreenImage.Start();
+
             // 네트워크 종류를 클라이언트로 지정
             mNetworkType = CLIENT;
-
-            mAsynSocket.Send();
         }
 
         /// <summary>
@@ -132,6 +133,44 @@ namespace ScreenTransferProgram
                 }
             }
             catch { }
+        }
+
+        /// <summary>
+        /// 수신한 화면 갱신
+        /// </summary>
+        /// <param name="image">수신한 화면 이미지</param>
+        public void RefreshScreenImage(Bitmap image)
+        {
+            UpdateScreenImage(image);
+        }
+
+        private void UpdateScreenImage(Bitmap image)
+        {
+            try
+            {
+                if(mPicScreenImage.InvokeRequired)
+                {
+                    UpdateScreenImageCallback d = new UpdateScreenImageCallback(UpdateScreenImage);
+
+                    Invoke(d, new object[] { image });
+                }
+                else
+                {
+                    // PictureBox 컨트롤에 갱신할 화면 이미지 입력
+                    mPicScreenImage.Image = image as Image;
+                }
+            }
+            catch { }
+        }
+
+        /// <summary>
+        /// 화면을 주기적으로 전송할 Timer
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mTimerSendScreenImage_Tick(object sender, EventArgs e)
+        {
+            mAsynSocket.Send();
         }
     }
 }

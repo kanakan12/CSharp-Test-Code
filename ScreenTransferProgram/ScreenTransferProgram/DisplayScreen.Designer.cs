@@ -28,22 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.mPicScreenImage = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.mTxtServerIPAddress = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.mTxtServerPortNum = new System.Windows.Forms.TextBox();
             this.mBtnStartServer = new System.Windows.Forms.Button();
+            this.mTxtServerPortNum = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.mTxtServerIPAddress = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.mTxtClientIPAddress = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.mTxtClientPortNum = new System.Windows.Forms.TextBox();
             this.mBtnStartClient = new System.Windows.Forms.Button();
+            this.mTxtClientPortNum = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.mTxtClientIPAddress = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.mTxtStatus = new System.Windows.Forms.TextBox();
             this.mBtnExit = new System.Windows.Forms.Button();
+            this.mTimerSendScreenImage = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mPicScreenImage)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -82,21 +84,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "서버용";
             // 
-            // label1
+            // mBtnStartServer
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 12);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "서버 아이피";
+            this.mBtnStartServer.Location = new System.Drawing.Point(6, 98);
+            this.mBtnStartServer.Name = "mBtnStartServer";
+            this.mBtnStartServer.Size = new System.Drawing.Size(188, 37);
+            this.mBtnStartServer.TabIndex = 2;
+            this.mBtnStartServer.Text = "서버 시작";
+            this.mBtnStartServer.UseVisualStyleBackColor = true;
+            this.mBtnStartServer.Click += new System.EventHandler(this.mBtnStartServer_Click);
             // 
-            // mTxtServerIPAddress
+            // mTxtServerPortNum
             // 
-            this.mTxtServerIPAddress.Location = new System.Drawing.Point(6, 32);
-            this.mTxtServerIPAddress.Name = "mTxtServerIPAddress";
-            this.mTxtServerIPAddress.Size = new System.Drawing.Size(188, 21);
-            this.mTxtServerIPAddress.TabIndex = 3;
+            this.mTxtServerPortNum.Location = new System.Drawing.Point(6, 71);
+            this.mTxtServerPortNum.Name = "mTxtServerPortNum";
+            this.mTxtServerPortNum.Size = new System.Drawing.Size(188, 21);
+            this.mTxtServerPortNum.TabIndex = 5;
             // 
             // label2
             // 
@@ -107,22 +110,21 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "서버 포트번호";
             // 
-            // mTxtServerPortNum
+            // mTxtServerIPAddress
             // 
-            this.mTxtServerPortNum.Location = new System.Drawing.Point(6, 71);
-            this.mTxtServerPortNum.Name = "mTxtServerPortNum";
-            this.mTxtServerPortNum.Size = new System.Drawing.Size(188, 21);
-            this.mTxtServerPortNum.TabIndex = 5;
+            this.mTxtServerIPAddress.Location = new System.Drawing.Point(6, 32);
+            this.mTxtServerIPAddress.Name = "mTxtServerIPAddress";
+            this.mTxtServerIPAddress.Size = new System.Drawing.Size(188, 21);
+            this.mTxtServerIPAddress.TabIndex = 3;
             // 
-            // mBtnStartServer
+            // label1
             // 
-            this.mBtnStartServer.Location = new System.Drawing.Point(6, 98);
-            this.mBtnStartServer.Name = "mBtnStartServer";
-            this.mBtnStartServer.Size = new System.Drawing.Size(188, 37);
-            this.mBtnStartServer.TabIndex = 2;
-            this.mBtnStartServer.Text = "서버 시작";
-            this.mBtnStartServer.UseVisualStyleBackColor = true;
-            this.mBtnStartServer.Click += new System.EventHandler(this.mBtnStartServer_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 12);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "서버 아이피";
             // 
             // groupBox3
             // 
@@ -138,21 +140,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "클라이언트용";
             // 
-            // label3
+            // mBtnStartClient
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(105, 12);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "클라이언트 아이피";
+            this.mBtnStartClient.Location = new System.Drawing.Point(6, 95);
+            this.mBtnStartClient.Name = "mBtnStartClient";
+            this.mBtnStartClient.Size = new System.Drawing.Size(188, 44);
+            this.mBtnStartClient.TabIndex = 3;
+            this.mBtnStartClient.Text = "클라이언트 시작";
+            this.mBtnStartClient.UseVisualStyleBackColor = true;
+            this.mBtnStartClient.Click += new System.EventHandler(this.mBtnStartClient_Click);
             // 
-            // mTxtClientIPAddress
+            // mTxtClientPortNum
             // 
-            this.mTxtClientIPAddress.Location = new System.Drawing.Point(6, 32);
-            this.mTxtClientIPAddress.Name = "mTxtClientIPAddress";
-            this.mTxtClientIPAddress.Size = new System.Drawing.Size(188, 21);
-            this.mTxtClientIPAddress.TabIndex = 1;
+            this.mTxtClientPortNum.Location = new System.Drawing.Point(6, 71);
+            this.mTxtClientPortNum.Name = "mTxtClientPortNum";
+            this.mTxtClientPortNum.Size = new System.Drawing.Size(188, 21);
+            this.mTxtClientPortNum.TabIndex = 3;
             // 
             // label4
             // 
@@ -163,22 +166,21 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "클라이언트 포트번호";
             // 
-            // mTxtClientPortNum
+            // mTxtClientIPAddress
             // 
-            this.mTxtClientPortNum.Location = new System.Drawing.Point(6, 71);
-            this.mTxtClientPortNum.Name = "mTxtClientPortNum";
-            this.mTxtClientPortNum.Size = new System.Drawing.Size(188, 21);
-            this.mTxtClientPortNum.TabIndex = 3;
+            this.mTxtClientIPAddress.Location = new System.Drawing.Point(6, 32);
+            this.mTxtClientIPAddress.Name = "mTxtClientIPAddress";
+            this.mTxtClientIPAddress.Size = new System.Drawing.Size(188, 21);
+            this.mTxtClientIPAddress.TabIndex = 1;
             // 
-            // mBtnStartClient
+            // label3
             // 
-            this.mBtnStartClient.Location = new System.Drawing.Point(6, 95);
-            this.mBtnStartClient.Name = "mBtnStartClient";
-            this.mBtnStartClient.Size = new System.Drawing.Size(188, 44);
-            this.mBtnStartClient.TabIndex = 3;
-            this.mBtnStartClient.Text = "클라이언트 시작";
-            this.mBtnStartClient.UseVisualStyleBackColor = true;
-            this.mBtnStartClient.Click += new System.EventHandler(this.mBtnStartClient_Click);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 12);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "클라이언트 아이피";
             // 
             // mTxtStatus
             // 
@@ -198,6 +200,10 @@
             this.mBtnExit.Text = "네트워크 종료";
             this.mBtnExit.UseVisualStyleBackColor = true;
             this.mBtnExit.Click += new System.EventHandler(this.mBtnExit_Click);
+            // 
+            // mTimerSendScreenImage
+            // 
+            this.mTimerSendScreenImage.Tick += new System.EventHandler(this.mTimerSendScreenImage_Tick);
             // 
             // DisplayScreen
             // 
@@ -240,6 +246,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox mTxtStatus;
         private System.Windows.Forms.Button mBtnExit;
+        private System.Windows.Forms.Timer mTimerSendScreenImage;
     }
 }
 

@@ -114,7 +114,7 @@ namespace ScreenTransferProgram
         /// <summary>
         /// 서버를 시작
         /// </summary>
-        /// <param name="portNum"></param>
+        /// <param name="portNum">서버 Port 번호</param>
         public void StartServer(int portNum)
         {
             mServerIPAddress = mMyIPAddress;
@@ -196,11 +196,12 @@ namespace ScreenTransferProgram
                     break;
                 }
 
-                // 데이터 처리
+                // 데이터 수신
                 data = ReceiveData();
 
                 image = mScreenCapture.GetScreenImage(data, data.Length);
 
+                // disyplay screen 창에 새로운 image 전달
                 mDisplayScreenWnd.RefreshScreenImage(image);
 
                 mDisplayScreenWnd.NotifyMessage("새로운 화면 수신");
@@ -237,10 +238,12 @@ namespace ScreenTransferProgram
             // 수신하여야 할 총 데이터 크기를 구함
             totalDataSize = BitConverter.ToInt32(headerBuffer, 0);
 
+            // 남은 수신하여야 하는 데이터 크기를 leftDataSize에 저장
             leftDataSize = totalDataSize;
             // 수신할 총 데이터 크기만큼 데이터 배열 생성
             dataBuffer = new byte[totalDataSize];
 
+            // 수신하여야 할 남은 데이터가 없을 때 까지 반복
             while(leftDataSize > 0)
             {
                 // 데이터 수신
@@ -253,6 +256,7 @@ namespace ScreenTransferProgram
                 leftDataSize -= receivedDataSize;
             }
 
+            // 수신된 데이터가 들어있는 dataBuffer 변수를 반환
             return dataBuffer;
         }
 
@@ -310,11 +314,12 @@ namespace ScreenTransferProgram
             // 전체 데이터 크기를 전송
             mClientSocket.SendTo(headerBuffer, PACKET_HEADER_SIZE, SocketFlags.None, ipep);
 
+            // 데이터를 모두 전송할 때 까지 반복
             while (leftDataSize > 0)
             {
                 // 데이터 전송
                 // sentDatasize에는 send 함수를 한 번 호출함으로써 전송된 데이터의 크기가 저장
-                sentDataSize = mClientSocket.SendTo(headerBuffer, accumulatedDataSize, leftDataSize, SocketFlags.None, ipep);
+                sentDataSize = mClientSocket.SendTo(dataBuffer, accumulatedDataSize, leftDataSize, SocketFlags.None, ipep);
 
                 // 총 누적 수신된 데이터를 구함
                 accumulatedDataSize += sentDataSize;
